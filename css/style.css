@@ -111,6 +111,11 @@ h1 {
     animation: slideDownFade .5s .5s forwards;
 }
 
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fade .5s .5s forwards;
+}
+
 .overlay img {
     max-height: 100%;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, .8);
@@ -121,7 +126,35 @@ h1 {
     border-radius: 0;
 }
 
+/* Navigasi */
+.next,
+.prev {
+    width: 57px;
+    height: 93px;
+    background-image: url(../img/kanan.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 40%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/kiri.png);
+    margin-left: -100px;
+}
+
 /* Animasi */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes zoomDanFade {
     0% {
         transform: scale(0);
